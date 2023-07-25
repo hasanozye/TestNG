@@ -1,0 +1,91 @@
+TestNG (Next Generation), JUnit ve NUnit test frameworklerinin zayıf yönlerinden etkilenmiş ve
+bunların ortadan kaldırılması amaçlanarak Cedric Beust tarafından geliştirilen
+açık kaynaklı bir test frameworküdür.
+
+TestNG kullanarak uygun bir rapor oluşturabilir ve rapor sonucunda kaç test senaryosunun
+başarılı ve başarısız olduğunu görebiliriz.
+
+
+TestNG Avantajlı Özellikleri :
+ - Annotationlar,
+ - Testlerin ilgili Thread’lerde koşabilmesi,
+ - Multi thread (Çoklu Akış) test desteği,
+ - @DataProvider notasyonu sayesinde Data Driven Test,
+ - Esnek test konfigürasyonu,
+
+
+
+
+
+
+
+
+
+@BeforeSuite                        // Herseyden önce baslayan method
+
+    @BeforeTest                     // Bir Thread'de Yürütülen testler grubu
+        @BeforeGroups               // TestNG gruplar olusturulabilir, bu gruplar öncesi
+            @BeforeClass            // O Class öncesi
+                @BeforeMethod       // @Test annotation'i olan methodlar
+
+                @AfterMethod
+            @AfterClass
+        @AfterGroups
+    @AfterTest
+
+@AfterSuite     // Herseyden sonra calisan method
+
+
+
+
+
+Suite
+    Test1
+        Class1
+            Method1
+            Method2
+
+        Class2
+            Method1
+            Method2
+
+    Test2
+        Class21
+            Method1
+            Method2
+
+        Class22
+            Method1
+            Method2
+
+
+
+
+
+
+
+@Test
+alwaysRun
+dataProvider
+dataProviderClass
+dependsOnGroups
+dependsOnMethods
+description
+enabled
+expectedExceptions
+groups
+invocationCount
+invocationTimeOut
+priority
+successPercentage
+singleThreaded
+timeOut
+threadPoolSize
+
+
+@DataProvider
+name
+parallel
+
+@Parameters
+value
