@@ -42,8 +42,8 @@ public class Driver {
                     options.addArguments("--start-maximized"); // ilk açılışta maximized açılır
 //                    options.addArguments("--headless"); // arka planda çalışır
 //                    options.addArguments("--remote-debugging-port=9222");
-                    options.addArguments("--user-data-dir=" + System.getProperty("user.home") + "\\Desktop\\User Data");
-                    options.addArguments("--profile-directory=Profile 1");
+//                    options.addArguments("--user-data-dir=" + System.getProperty("user.home") + "\\Desktop\\User Data");
+//                    options.addArguments("--profile-directory=Profile 1");
                     driver = new ChromeDriver(options);
                 }
 
