@@ -11,6 +11,7 @@ import utils.Driver;
 import java.time.Duration;
 
 public class BaseOdev01 {
+
     protected WebDriver driver;
     protected WebDriverWait wait;
 
@@ -21,6 +22,7 @@ public class BaseOdev01 {
     }
 
     public void sendKeys(By locator, String text) {
+        waitUntilVisible(locator);
         WebElement element = driver.findElement(locator);
         sendKeys(element, text);
 
