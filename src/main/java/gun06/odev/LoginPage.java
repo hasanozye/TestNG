@@ -7,6 +7,11 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
+import utils.Browsers;
 import utils.Driver;
 
 import java.time.Duration;
@@ -30,14 +35,23 @@ public class LoginPage {
     @FindBy(xpath = "//h2[text()='My Account']")
     public static WebElement eMyAccountText;
 
-    public void waitUntilVisible(WebElement element) {
-        wait.until(ExpectedConditions.visibilityOf(element));
-    }
 
-    public LoginPage() {
-        driver = Driver.getDriver();
+    @Parameters("browser")
+    @BeforeTest
+    public void setupDriver(@Optional("chrome") String browser) {
+        driver = Driver.getDriver(Browsers.valueOf(browser.toUpperCase()));
+        driver.manage().window().maximize();
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         PageFactory.initElements(driver, this);
+    }
+
+    @AfterTest
+    public void tearDown() {
+        Driver.quitDriver();
+    }
+
+    public void waitUntilVisible(WebElement element) {
+        wait.until(ExpectedConditions.visibilityOf(element));
     }
 
     public void goToUrl() {

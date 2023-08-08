@@ -25,8 +25,5 @@ public class TestLogin {
 
     }
 
-    @AfterTest
-    public void tearDown(){
-        Driver.quitDriver();
-    }
+
 }
