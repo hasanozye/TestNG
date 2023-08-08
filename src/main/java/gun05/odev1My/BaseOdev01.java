@@ -1,10 +1,11 @@
-package gun05.odev1;
+package gun05.odev1My;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import utils.Driver;
 
@@ -19,6 +20,11 @@ public class BaseOdev01 {
     public void setup() {
         driver = Driver.getDriver();
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    }
+
+    @AfterTest
+    public void tearDown(){
+        driver.quit();
     }
 
     public void sendKeys(By locator, String text) {
