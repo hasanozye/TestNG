@@ -13,7 +13,8 @@ public class Driver {
         System.out.println(System.getProperty("user.home"));
     }
 
-    private static WebDriver driver;
+    //    private static WebDriver driver;
+    private static ThreadLocal<WebDriver> drivers = new ThreadLocal<>();
 
     public static WebDriver getDriver() {
         return getDriver(Browsers.CHROME);
@@ -21,19 +22,20 @@ public class Driver {
 
     public static WebDriver getDriver(Browsers browser) {
 
-        if (driver == null) {
+//        if (driver == null) {
+        if (drivers.get() == null) {
             switch (browser) {
                 case EDGE -> {
                     WebDriverManager.edgedriver().setup();
-                    driver = new EdgeDriver();
+                    drivers.set(new EdgeDriver());
                 }
                 case FIREFOX -> {
                     WebDriverManager.firefoxdriver().setup();
-                    driver = new FirefoxDriver();
+                    drivers.set(new FirefoxDriver());
                 }
                 case SAFARI -> {
                     WebDriverManager.safaridriver().setup();
-                    driver = new SafariDriver();
+                    drivers.set(new SafariDriver());
                 }
                 default -> {
                     WebDriverManager.chromedriver().setup();
@@ -44,18 +46,18 @@ public class Driver {
 //                    options.addArguments("--remote-debugging-port=9222");
 //                    options.addArguments("--user-data-dir=" + System.getProperty("user.home") + "\\Desktop\\User Data");
 //                    options.addArguments("--profile-directory=Profile 1");
-                    driver = new ChromeDriver(options);
+                    drivers.set(new ChromeDriver());
                 }
 
             }
         }
-        return driver;
+        return drivers.get();
     }
 
     public static void quitDriver() {
-        if (driver != null) {
+        if (drivers.get() != null) {
             Driver.getDriver().quit();
-            driver = null;
+            drivers.set(null);
         }
     }
 
