@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite" parallel="tests" thread-count="3">
+    <test verbose="2" preserve-order="true" name="Test3">
+        <classes>
+            <class name="gun07.xml3.Test3xml"/>
+        </classes>
+    </test>
+
+    <test verbose="2" preserve-order="true" name="Test32">
+        <classes>
+            <class name="gun07.xml3.Test32xml"/>
+        </classes>
+    </test>
+</suite>

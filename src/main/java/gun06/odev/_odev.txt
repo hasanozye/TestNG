@@ -1,0 +1,8 @@
+
+1.  https://opencart.abstracta.us/
+2.  POM, PageFactory -> @FindBy kullanilacak
+3.  LoginPage olusturun
+4.  url ve login icin kullanilacak locatorlar bu class'da
+    @FindBy ile tanimlanacak
+5.  TestLogin class'inda login testi olacak ve
+    login olundugu assert edilecek.

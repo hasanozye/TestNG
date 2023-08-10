@@ -1,4 +1,4 @@
-package gun05.odev1;
+package gun05.odev1My;
 
 import org.openqa.selenium.By;
 
