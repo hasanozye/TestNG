@@ -1,4 +1,4 @@
-package gun08;
+package gun08.threadlocalrun;
 
 import org.testng.annotations.Test;
 

@@ -4,14 +4,14 @@
     <test verbose="2" preserve-order="true" name="test1">
         <parameter name="browser" value="FIREFOX"/>
         <classes>
-            <class name="gun08.TestParallel"/>
+            <class name="gun08.objectrun.TestParallelObject"/>
         </classes>
     </test>
 
     <test verbose="2" preserve-order="true" name="test2">
         <parameter name="browser" value="CHROME"/>
         <classes>
-            <class name="gun08.TestParallel"/>
+            <class name="gun08.objectrun.TestParallelObject"/>
         </classes>
     </test>
 
