@@ -38,5 +38,11 @@ public class propertyClass {
         System.out.println(user);
         System.out.println(pass);
 
+        properties.forEach((k, v) -> {
+            System.out.println(k + " : " + v);
+        });
+
+        fileReader.close();
+
     }
 }
