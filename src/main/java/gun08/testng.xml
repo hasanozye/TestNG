@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite" parallel="tests">
     <test verbose="2" preserve-order="true" name="test1">
-        <parameter name="browser" value="FIREFOX"/>
+        <parameter name="browser" value="EDGE"/>
         <classes>
             <class name="gun08.TestParallel"/>
         </classes>
