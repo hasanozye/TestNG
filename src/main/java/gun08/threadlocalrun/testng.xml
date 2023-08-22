@@ -2,16 +2,22 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite" parallel="tests">
     <test verbose="2" preserve-order="true" name="test1">
-        <parameter name="browser" value="EDGE"/>
+        <parameter name="browser" value="FIREFOX"/>
         <classes>
-            <class name="gun08.TestParallel"/>
+            <class name="gun08.threadlocalrun.TestParallel"/>
         </classes>
     </test>
 
     <test verbose="2" preserve-order="true" name="test2">
         <parameter name="browser" value="CHROME"/>
         <classes>
-            <class name="gun08.TestParallel"/>
+            <class name="gun08.threadlocalrun.TestParallel"/>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true" name="test3">
+        <parameter name="browser" value="EDGE"/>
+        <classes>
+            <class name="gun08.threadlocalrun.TestParallel"/>
         </classes>
     </test>
 

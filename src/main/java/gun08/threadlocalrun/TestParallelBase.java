@@ -1,4 +1,4 @@
-package gun08;
+package gun08.threadlocalrun;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;

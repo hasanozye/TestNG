@@ -1,16 +1,16 @@
-package gun08;
+package gun08.objectrun;
 
+import gun08.threadlocalrun.TestParallelBase;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import utils.Driver;
 
 import java.time.Duration;
 
-public class HomePage33 extends TestParallelBase {
+public class HomePage66 extends TestParallelBase {
     private WebDriver driver;
     private WebDriverWait wait;
 
@@ -33,7 +33,7 @@ public class HomePage33 extends TestParallelBase {
     @FindBy(xpath = "//aside//a[text()='Login']")
     public WebElement eRightMenuLogin;
 
-    public HomePage33(WebDriver driver) {
+    public HomePage66(WebDriver driver) {
         this.driver = driver;
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         PageFactory.initElements(driver, this);
