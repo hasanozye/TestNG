@@ -8,34 +8,28 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
-public class Driver {
-    public static void main(String[] args) {
-        System.out.println(System.getProperty("user.home"));
-    }
+public class DriverStatic {
 
-    //    private static WebDriver driver;
-    private static ThreadLocal<WebDriver> drivers = new ThreadLocal<>();
+    private static WebDriver driver;
 
     public static WebDriver getDriver() {
         return getDriver(Browsers.CHROME);
     }
 
     public static WebDriver getDriver(Browsers browser) {
-
-//        if (driver == null) {
-        if (drivers.get() == null) {
+        if (driver == null) {
             switch (browser) {
                 case EDGE -> {
                     WebDriverManager.edgedriver().setup();
-                    drivers.set(new EdgeDriver());
+                    driver = new EdgeDriver();
                 }
                 case FIREFOX -> {
                     WebDriverManager.firefoxdriver().setup();
-                    drivers.set(new FirefoxDriver());
+                    driver = new FirefoxDriver();
                 }
                 case SAFARI -> {
                     WebDriverManager.safaridriver().setup();
-                    drivers.set(new SafariDriver());
+                    driver = new SafariDriver();
                 }
                 default -> {
                     WebDriverManager.chromedriver().setup();
@@ -46,18 +40,16 @@ public class Driver {
 //                    options.addArguments("--remote-debugging-port=9222");
 //                    options.addArguments("--user-data-dir=" + System.getProperty("user.home") + "\\Desktop\\User Data");
 //                    options.addArguments("--profile-directory=Profile 1");
-                    drivers.set(new ChromeDriver());
+                    driver = new ChromeDriver(options);
                 }
-
             }
         }
-        return drivers.get();
+        return driver;
     }
 
-    public static void quitDriver() {
-        if (drivers.get() != null) {
-            Driver.getDriver().quit();
-            drivers.set(null);
+    public static void tearDown() {
+        if (driver != null) {
+            DriverStatic.getDriver().quit();
         }
     }
 

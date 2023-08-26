@@ -1,0 +1,21 @@
+https://demoblaze.com/
+
+
+
+
+1. Static Singleton driver kullanılacak, DriverDemo
+   a.   Hangi browser kullanilacagi Driver tanımlamadan önce belirtilecek
+   b.   Headless olup olmayacagi
+   c.   browser size, "max, 700x700, ....."
+   Driver tanimlamadan önce belirtilecek
+
+
+2. signup yapin
+3. sing in yapin
+4. Menüden Phones'a tiklayin
+5. Samsung s6'yi tiklayin
+6. Cart'a tiklayin
+7. Order edip alisverisi tamamlayin
+
+
+@BeforeTest ->  initialize driver tanımlayin,

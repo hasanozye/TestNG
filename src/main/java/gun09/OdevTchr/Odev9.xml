@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="All Test Suite" parallel="tests">
+    <test verbose="2" preserve-order="true" name="testMax">
+        <parameter name="browser" value="chrome"/>
+        <parameter name="size" value="max"/>
+        <classes>
+            <class name="gun09.OdevTchr.Odev9"/>
+        </classes>
+    </test>
+
+    <test verbose="2" preserve-order="true" name="testMin">
+        <parameter name="browser" value="chrome"/>
+        <parameter name="size" value="min"/>
+        <classes>
+            <class name="gun09.OdevTchr.Odev9"/>
+        </classes>
+    </test>
+</suite>

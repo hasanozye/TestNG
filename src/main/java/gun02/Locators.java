@@ -14,4 +14,6 @@ public class Locators {
     public static final By lTableCell3 = By.xpath("//div[@role='table']//div[contains(@class,'oxd-table-cell')][3]");
     public static final By lInvalidAccess = By.xpath("//p[text()='Invalid credentials']");
     public static final By lLoginMainPage = By.xpath("//h5[text()='Login']");
+    public static final By lUserDropDown = By.cssSelector(".oxd-userdropdown");
+    public static final By lUserDropDownLogout = By.xpath("//a[text()='Logout']");
 }
